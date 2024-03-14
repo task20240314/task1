@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="description" content=""><meta name="author" content="Garland System Limited"><meta name="format-detection" content="telephone=no">
+	<title>Task</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-grid.min.css" rel="stylesheet" />
+	<link href="js/oc234/assets/owl.carousel.min.css" rel="stylesheet" />
+	<link href="js/oc234/assets/owl.theme.default.min.css" rel="stylesheet" />
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+
+        $('.card').click(function(){
+            var selectId  = this.id;
+            var selected = this;
+
+
+            $('.card').each(function(){
+              $(this).removeClass('border-primary').addClass('shadow');
+            });
+         
+            if ($(selected).hasClass('shadow')){
+            $(selected).removeClass('shadow').addClass('border-primary');
+           };
+        });
+
+      })
+  
+    </script>
+	<script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("gl-inc-html");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("gl-inc-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    };
+  </script>
+  <!-- Custom styles for this template -->
+	<link href="index.css" rel="stylesheet" />
+</head>
+<body>
+
+<main role="main">
+
+
+<div class="container" id="" style="max-width:100%; display: block; ">&nbsp;
+  <div class="mx-3">
+    <h3 class="">Carousel</h3>
+  </div>
+  <div class="mx-3"> 
+    <h5 class="">Title</h5>
+  </div>
+
+  <div class="owl-carousel owl-theme" id="past_div">
+    <div class="card p-3 shadow my-4" id="card1">
+      <p class="h5"><span class="float-left bold">Item A</span><span class="float-right text-primary">$200</span></p>
+      <span class="float-left bold">Description</span>
+      <br>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail A-1</p>
+      <p class="float-left"><i class="fa fa-times" aria-hidden="true"></i> Detail A-2</p>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail A-3</p>
+    </div>
+    <div class="card p-3 shadow my-4" id="card2">
+      <p class="h5"><span class="float-left bold">Item B</span><span class="float-right text-primary">$200</span></p>
+      <span class="float-left bold">Description</span>
+      <br>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail B-1</p>
+      <p class="float-left"><i class="fa fa-times" aria-hidden="true"></i> Detail B-2</p>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail B-3</p>
+    </div>
+    <div class="card p-3 shadow my-4" id="card3">
+      <p class="h5"><span class="float-left bold">Item C</span><span class="float-right text-primary">$200</span></p>
+      <span class="float-left bold">Description</span>
+      <br>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail C-1</p>
+      <p class="float-left"><i class="fa fa-times" aria-hidden="true"></i> Detail C-2</p>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail C-3</p>
+    </div>
+    <div class="card p-3 shadow my-4" id="card4">
+      <p class="h5"><span class="float-left bold">Item D</span><span class="float-right text-primary">$200</span></p>
+      <span class="float-left bold">Description</span>
+      <br>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail D-1</p>
+      <p class="float-left"><i class="fa fa-times" aria-hidden="true"></i> Detail D-2</p>
+      <p class="float-left"><i class="fa fa-check" aria-hidden="true"></i>Detail D-3</p>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+
+<!-- End Page Content -->
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/oc234/owl.carousel.min.js"></script>
+  <script>
+    includeHTML();
+  </script>
+
+  <script>
+    var myIndex = 0;
+    var navbar = document.getElementById("navbar");
+    var toplogo = document.getElementById("toplogo");
+    var prevScrollpos = window.pageYOffset;
+    var toplogoH = 120;
+    //        var navMini = document.getElementById("navMini");
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      //            console.log("onscroll toplogoH: "+toplogoH+", prevsp: "+ prevScrollpos+", currentScrollPos: " + currentScrollPos);
+      if (currentScrollPos > toplogoH) {
+
+        toplogo.hidden = true;
+        navbar.classList.add("fixed-top")
+      } else if (currentScrollPos < 1) {
+        toplogo.hidden = false;
+        navbar.classList.remove("fixed-top");
+      } else {
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+  <script>
+    $('#event_div').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      center: true,
+      stagePadding: 20,
+      responsive: {
+        0: { items: 2 },
+        800: { items: 3 },
+        1500: { items: 3 }
+      }
+    })
+    $('#past_div').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      autoplay: false,
+      center: true,
+      stagePadding: 20,
+      responsive: {
+        0: { items: 2 },
+        800: { items: 3 },
+        1500: { items: 3 }
+      }
+    })
+  </script>
+</body>
+</html>
